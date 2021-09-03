@@ -38,6 +38,19 @@ def add_to_watch(name, year, genre):
 
     return {'movie_id': curr_id}
 
+'''
+Add a new movie to the watched list
+Has structure:
+    {'id': int
+    'name': string,
+    'year': int,
+    'genre': string,
+    'date_watched': date(YYYY,MM,DD),
+    'score': double}
+Returns:
+    {'movie_id': curr_id}
+    The current id of the newly created movie
+'''
 def add_new_watched(name, year, genre, date, score):
     with open('data_files/watched.json','r') as open_file:
         watched_data = json.load(open_file)
@@ -60,7 +73,20 @@ def add_new_watched(name, year, genre, date, score):
 
     return {'movie_id': curr_id}
 
-
+'''
+Add a movie to the watched list from the to watch list, and remove the movie from
+the to watch list
+Has structure:
+    {'id': int
+    'name': string,
+    'year': int,
+    'genre': string,
+    'date_watched': date(YYYY,MM,DD),
+    'score': double}
+Returns:
+    {'movie_id': int}
+    The current id of the moved movie
+'''
 def add_list_watched(movie_id, date, score):
     with open('data_files/to_watch.json','r') as open_file:
         to_watch_data = json.load(open_file)
@@ -83,11 +109,20 @@ def add_list_watched(movie_id, date, score):
     with open('data_files/watched.json','w') as open_file:
         json.dump(watched_data, open_file)
 
+    return {'movie_id': movie_id}
+
+################################################################################
+#                            Remove Functions                                  #
+################################################################################
+
+'''
+Remove a movie from any list with the given movie id
+'''
 def remove_movie(id):
     pass
 
 ################################################################################
-#                            Helper Functions                                 #
+#                            Helper Functions                                  #
 ################################################################################
 
 def create_new_movie(name, year, genre, date_watched, movie_id, score):
