@@ -12,6 +12,7 @@ clear all movies from the to watch list
 def clear_to_watch():
     with open("data_files/to_watch.json", "w") as open_file:
         json.dump({'to_watch': []}, open_file)
+    return {}
 
 '''
 clear all movies from the watched list
@@ -19,6 +20,7 @@ clear all movies from the watched list
 def clear_watched():
     with open("data_files/watched.json", "w") as open_file:
         json.dump({'watched': []}, open_file)
+    return {}
 
 '''
 clear movie id tracker
@@ -26,6 +28,7 @@ clear movie id tracker
 def clear_ids():
     with open("data_files/id.json", "w") as open_file:
         json.dump({'id': 0}, open_file)
+    return {}
 
 '''
 clear all data including movies from to watch list, watched list, and movie id tracker
@@ -34,6 +37,7 @@ def clear_all ():
     clear_to_watch()
     clear_watched()
     clear_ids()
+    return {}
 
 ################################################################################
 #                            Listing Functions                                 #

@@ -121,7 +121,7 @@ Remove a movie from any list with the given movie id
 Returns:
     boolean: status of whether it was removed or not
 '''
-def remove_to_watch_movie(movie_id):
+def remove_to_watch(movie_id):
     with open('data_files/to_watch.json','r') as open_file:
         to_watch_data = json.load(open_file)
     to_watch = to_watch_data['to_watch']
@@ -136,7 +136,7 @@ def remove_to_watch_movie(movie_id):
 
     return False
 
-def remove_watched_movie(movie_id):
+def remove_watched(movie_id):
 
     with open('data_files/watched.json','r') as open_file:
         watched_data = json.load(open_file)
@@ -151,6 +151,7 @@ def remove_watched_movie(movie_id):
             return True
 
     return False
+    
 ################################################################################
 #                            Helper Functions                                  #
 ################################################################################
