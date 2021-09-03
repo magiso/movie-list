@@ -121,7 +121,7 @@ def test_add_list_watched():
     ]}
     assert list_watched() == {'watched_list': []}
 
-    add_list_watched(movie['movie_id'], '12/1/2021', 10)
+    add_list_watched(movie['id'], '12/1/2021', 10)
     assert list_to_watch() == {'to_watch_list': []}
     assert list_watched() == {'watched_list': [
         {'name': 'new movie',

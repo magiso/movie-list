@@ -36,7 +36,7 @@ def add_to_watch(name, year, genre):
     with open('data_files/id.json', 'w') as open_file:
         json.dump({'id': curr_id}, open_file)
 
-    return {'movie_id': curr_id}
+    return {'id': curr_id}
 
 '''
 Add a new movie to the watched list
@@ -71,7 +71,7 @@ def add_new_watched(name, year, genre, date, score):
     with open('data_files/id.json', 'w') as open_file:
         json.dump({'id': curr_id}, open_file)
 
-    return {'movie_id': curr_id}
+    return {'id': curr_id}
 
 '''
 Add a movie to the watched list from the to watch list, and remove the movie from
@@ -109,7 +109,7 @@ def add_list_watched(movie_id, date, score):
     with open('data_files/watched.json','w') as open_file:
         json.dump(watched_data, open_file)
 
-    return {'movie_id': movie_id}
+    return {'id': movie_id}
 
 ################################################################################
 #                            Remove Functions                                  #
@@ -117,9 +117,36 @@ def add_list_watched(movie_id, date, score):
 
 '''
 Remove a movie from any list with the given movie id
+
+Returns:
+    boolean: status of whether it was removed or not
 '''
-def remove_movie(id):
-    pass
+def remove_movie(movie_id):
+    with open('data_files/to_watch.json','r') as open_file:
+        to_watch_data = json.load(open_file)
+    to_watch = to_watch_data['to_watch']
+
+    with open('data_files/watched.json','r') as open_file:
+        watched_data = json.load(open_file)
+    watched = watched_data['watched']
+
+    # Remove the movie from to_watch
+    for movie in to_watch:
+        if movie_id == movie['id']:
+            to_watch.remove(movie)
+            with open('data_files/to_watch.json','w') as open_file:
+                json.dump(to_watch_data, open_file)
+            return True
+    
+    # Remove the movie from watched
+    for movie in watched:
+        if movie_id == movie['id']:
+            watched.remove(movie)
+            with open('data_files/watched.json','w') as open_file:
+                json.dump(watched_data, open_file)
+            return True
+
+    return False
 
 ################################################################################
 #                            Helper Functions                                  #
