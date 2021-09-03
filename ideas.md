@@ -8,7 +8,11 @@
     - [ ] year
     - [ ] grouped by genre
 - [ ] movie recommendations
-    - need movie database 
+    - need movie database
+    - upvote/downvote movies 
+- [ ] movie preview trailer
+- [ ] option to contribute to the scores
+    - add review?
 
 movies on watched list:
 - includes date watched
