@@ -5,6 +5,7 @@ from flask_cors import CORS
 
 from src.movies import *
 from src.system import *
+from src import config
 
 def defaultHandler(err):
     response = err.get_response()
@@ -94,12 +95,18 @@ def clear_all_id():
 
 ################################################################################
 
-@APP.route("towatch/list", methods=['GET'])
+@APP.route("/towatch/list", methods=['GET'])
 def to_watch_list():
     # List all movies on the to watch list
     return dumps(list_to_watch())
 
-@APP.route("watched/list", methods=['GET'])
+@APP.route("/watched/list", methods=['GET'])
 def watched_list():
     # list all movies on the watched list
     return dumps(list_watched())
+
+
+################################################################################
+
+if __name__ == "__main__":
+    APP.run(port=config.port)
