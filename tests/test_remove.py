@@ -14,7 +14,7 @@ def test_remove_to_watch():
         'genre': 'comedy'}
     ]}
 
-    remove_movie(new_movie['id'])
+    remove_to_watch_movie(new_movie['id'])
     assert list_to_watch() == {'to_watch_list': []}
 
 # test removing a movie from the watched list
@@ -29,5 +29,5 @@ def test_remove_watched():
         'score': 10}
     ]}
 
-    remove_movie(new_movie['id'])
+    remove_watched_movie(new_movie['id'])
     assert list_watched() == {'watched_list': []}
