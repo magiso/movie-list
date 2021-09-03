@@ -119,7 +119,7 @@ def add_list_watched(movie_id, date, score):
 Remove a movie from any list with the given movie id
 
 Returns:
-    boolean: status of whether it was removed or not
+    {'status': boolean}: status of whether it was removed or not
 '''
 def remove_to_watch(movie_id):
     with open('data_files/to_watch.json','r') as open_file:
@@ -132,9 +132,9 @@ def remove_to_watch(movie_id):
             to_watch.remove(movie)
             with open('data_files/to_watch.json','w') as open_file:
                 json.dump(to_watch_data, open_file)
-            return True
+            return {'status': True}
 
-    return False
+    return {'status': False}
 
 def remove_watched(movie_id):
 
@@ -148,10 +148,10 @@ def remove_watched(movie_id):
             watched.remove(movie)
             with open('data_files/watched.json','w') as open_file:
                 json.dump(watched_data, open_file)
-            return True
+            return {'status': True}
 
-    return False
-    
+    return {'status': False}
+
 ################################################################################
 #                            Helper Functions                                  #
 ################################################################################
