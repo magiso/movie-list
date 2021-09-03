@@ -108,5 +108,9 @@ def list_watched():
     all_watched = sorted(all_watched, key = lambda id: (id['score'], 
     id['date_watched']), reverse = True)
 
+    # return all date objects to strings
+    for movie in all_watched:
+        movie['date_watched'] = movie['date_watched'].strftime('%d/%m/%Y')
+
     return {'watched_list': all_watched}
     

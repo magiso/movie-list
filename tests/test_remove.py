@@ -25,7 +25,7 @@ def test_remove_watched():
         {'name': 'new movie',
         'year': 2021,
         'genre': 'comedy',
-        'date_watched': date(2021,1,1),
+        'date_watched': '01/01/2021',
         'score': 10}
     ]}
 

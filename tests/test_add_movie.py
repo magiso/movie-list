@@ -48,7 +48,7 @@ def test_add_new_watched():
         {'name': 'new movie',
         'year': 2021,
         'genre': 'comedy',
-        'date_watched': date(1,1,1),
+        'date_watched': '01/01/0001',
         'score': 5,}
     ]}
 
@@ -57,12 +57,12 @@ def test_add_new_watched():
         {'name': 'another movie',
         'year': 'None',
         'genre': 'thriller',
-        'date_watched': date(1,1,1),
+        'date_watched': '01/01/0001',
         'score': 10,},
         {'name': 'new movie',
         'year': 2021,
         'genre': 'comedy',
-        'date_watched': date(1,1,1),
+        'date_watched': '01/01/0001',
         'score': 5,},
     ]}
 
@@ -71,17 +71,17 @@ def test_add_new_watched():
         {'name': 'another movie',
         'year': 'None',
         'genre': 'thriller',
-        'date_watched': date(1,1,1),
+        'date_watched': '01/01/0001',
         'score': 10},
         {'name': 'third movie',
         'year': 2020,
         'genre': 'None',
-        'date_watched': date(2021,1,1),
+        'date_watched': '01/01/2021',
         'score': 7,},
         {'name': 'new movie',
         'year': 2021,
         'genre': 'comedy',
-        'date_watched': date(1,1,1),
+        'date_watched': '01/01/0001',
         'score': 5,},
     ]}
 
@@ -90,22 +90,22 @@ def test_add_new_watched():
         {'name': 'another movie',
         'year': 'None',
         'genre': 'thriller',
-        'date_watched': date(1,1,1),
+        'date_watched': '01/01/0001',
         'score': 10,},
         {'name': 'third movie',
         'year': 2020,
         'genre': 'None',
-        'date_watched': date(2021,1,1),
+        'date_watched': '01/01/2021',
         'score': 7},
         {'name': 'later movie',
         'year': 2021,
         'genre': 'None',
-        'date_watched': date(2020,4,20),
+        'date_watched': '20/04/2020',
         'score': 7},
         {'name': 'new movie',
         'year': 2021,
         'genre': 'comedy',
-        'date_watched': date(1,1,1),
+        'date_watched': '01/01/0001',
         'score': 5},
     ]}
 
@@ -127,6 +127,6 @@ def test_add_list_watched():
         {'name': 'new movie',
         'year': 2021,
         'genre': 'comedy',
-        'date_watched': date(2021,1,12),
+        'date_watched': '12/01/2021',
         'score': 10}
     ]}
