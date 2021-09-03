@@ -14,6 +14,9 @@
 - [ ] option to contribute to the scores
     - add review?
 
+- [x] flask api
+- [ ] frontend
+
 movies on watched list:
 - includes date watched
 - includes score
