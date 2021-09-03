@@ -2,7 +2,7 @@ import pytest
 import json
 
 from src.system import *
-from src.movies import add_to_watch, add_new_watched
+from src.movies import *
 from datetime import datetime, date
 
 def test_add_to_watch():
@@ -95,4 +95,24 @@ def test_add_watched():
         'year': 2020,
         'genre': 'None',
         'date_watched': date(2021,1,1)},
+    ]}
+
+def test_add_list_watched():
+    clear_all()
+
+    movie = add_to_watch("new movie", 2021, "comedy")
+    assert list_to_watch() == {"to_watch_list": [
+        {'name': 'new movie',
+        'year': 2021,
+        'genre': 'comedy'}
+    ]}
+    assert list_watched() == {'watched_list': []}
+
+    add_list_watched(movie['movie_id'], '12/1/2021')
+    assert list_to_watch() == {'to_watch_list': []}
+    assert list_watched() == {'watched_list': [
+        {'name': 'new movie',
+        'year': 2021,
+        'genre': 'comedy',
+        'date_watched': date(2021,1,12)}
     ]}
