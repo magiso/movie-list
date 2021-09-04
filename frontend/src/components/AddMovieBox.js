@@ -8,13 +8,10 @@ import {
     DialogContentText,
     IconButton,
     Button,
-    Switch,
     TextField,
     Grid,
-    FormControlLabel,
 } from "@material-ui/core";
 import Add from "@material-ui/icons/Add";
-import { getThemeProps } from '@material-ui/styles';
 
 function AddMovieBox({...props}) {
     const [open, setOpen] = React.useState(false);

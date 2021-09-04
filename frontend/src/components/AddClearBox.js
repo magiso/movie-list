@@ -4,14 +4,9 @@ import {
     Dialog,
     DialogTitle,
     DialogActions,
-    DialogContent,
     DialogContentText,
     IconButton,
     Button,
-    Switch,
-    TextField,
-    Grid,
-    FormControlLabel,
 } from "@material-ui/core";
 import Delete from "@material-ui/icons/Delete";
 
