@@ -1,19 +1,19 @@
 import React from 'react';
 import {List, ListItem, ListSubheader, ListItemText} from '@material-ui/core';
 //import axios from 'axios';
-import AddMovieBox from '../components/ToWatch/AddMovieBox';
-import ClearToWatchBox from '../components/ToWatch/ClearToWatchBox';
-import SwitchPageBox from '../components/ToWatch/SwitchPageBox';
+import AddMovieBox from '../components/Watched/AddMovieBox';
+import ClearWatchedBox from '../components/Watched/ClearWatchedBox';
+import SwitchPageBox from '../components/Watched/SwitchPageBox';
 import {Grid} from "@material-ui/core";
 
 import {useStep} from '../utils/update';
 
-function ToWatchPage() {
+function WatchedPage() {
     const axios = require('axios');
     const [toWatchData, setToWatchData] = React.useState([]);
 
     const fetchMovieList = () => {
-        axios.get('http://127.0.0.1:8000/towatch/list').then(response => {
+        axios.get('http://127.0.0.1:8000/watched/list').then(response => {
             console.log(response.data);
             //console.log(response.data.to_watch_list[1].name);
             // for(let i = 0; i < 2; i++) {
@@ -38,7 +38,7 @@ function ToWatchPage() {
             >
                 <SwitchPageBox />
                 <AddMovieBox callback = {fetchMovieList} />
-                <ClearToWatchBox callback = {fetchMovieList} />
+                <ClearWatchedBox callback = {fetchMovieList} />
             </Grid>
             
             <List subheader = {
@@ -60,4 +60,4 @@ function ToWatchPage() {
     )
 }
 
-export default ToWatchPage;
+export default WatchedPage;
