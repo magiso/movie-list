@@ -99,7 +99,7 @@ def list_watched():
             'year': movie['year'],
             'genre': movie['genre'],
             'date_watched': datetime_object,
-            'score': movie['score'],
+            'score': int(movie['score']),
         }
         all_watched.append(next_movie)
 
