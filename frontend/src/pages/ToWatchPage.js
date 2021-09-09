@@ -4,6 +4,7 @@ import {List, ListItem, ListSubheader, ListItemText} from '@material-ui/core';
 import AddMovieBox from '../components/ToWatch/AddMovieBox';
 import ClearToWatchBox from '../components/ToWatch/ClearToWatchBox';
 import SwitchPageBox from '../components/ToWatch/SwitchPageBox';
+import HomeButton from '../components/HomeButton';
 import {Grid} from "@material-ui/core";
 
 import {useStep} from '../utils/update';
@@ -36,6 +37,7 @@ function ToWatchPage() {
                 justify="left"
                 alignItems="center"
             >
+                <HomeButton />
                 <SwitchPageBox />
                 <AddMovieBox callback = {fetchMovieList} />
                 <ClearToWatchBox callback = {fetchMovieList} />
