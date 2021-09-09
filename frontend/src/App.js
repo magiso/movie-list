@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-
-//import HomePage from './pages/HomePage';
+import HomePage from './pages/HomePage';
 import ToWatchPage from './pages/ToWatchPage';
+import WatchedPage from './pages/WatchedPage';
 
 // Route to different pages
 function App() {
@@ -11,14 +11,9 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/towatch" component={ToWatchPage}>
-        </Route>;
-        <Route path="/watched">
-          <p> Movies i've watched! </p>
-        <Route path="/">
-          <p> Some Text! </p>
-        </Route>;
-        </Route>;
+        <Route path="/towatch" component={ToWatchPage} />
+        <Route path="/watched" component={WatchedPage} />
+        <Route path="/home" component={HomePage} />
       </Switch>
     </Router>
   );

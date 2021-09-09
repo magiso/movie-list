@@ -26,12 +26,10 @@ function AddMovieBox({...props}) {
         const name = event.target[0].value;
         const year = event.target[1].value;
         const genre = event.target[2].value;
-        const date = event.target[3].value;
-        const score = event.target[4].value;
 
         if (!name) return;
 
-        axios.post('http://127.0.0.1:8000/watched/new', {name, year, genre, date, score})
+        axios.post('http://127.0.0.1:8000/towatch/new', {name, year, genre})
         .then(response => {
             console.log(response.data);
             props.callback();

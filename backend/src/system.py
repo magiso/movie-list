@@ -89,10 +89,11 @@ def list_watched():
 
     all_watched = []
     for movie in watched:
+
+        datetime_object = date.min
         if movie['date_watched'] != 'None':
             datetime_object = datetime.strptime(movie['date_watched'], '%d/%m/%Y').date()
-        else:
-            datetime_object = date.min
+        
         next_movie = {
             'name': movie['name'],
             'year': movie['year'],
